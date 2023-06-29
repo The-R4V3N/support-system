@@ -23,7 +23,7 @@ const userSchema = mongoose.Schema(
 				/^(?=.*[!@#$%^&*])/,
 				'Password must contain at least one special character (!@#$%^&*)',
 			],
-			select: false,
+			// select: false,
 		},
 		isAdmin: {
 			type: Boolean,
