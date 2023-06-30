@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import {toast} from 'react-toastify'
+import { toast } from 'react-toastify'
 import { FaUser } from 'react-icons/fa'
 
 function Register() {
@@ -18,13 +18,13 @@ function Register() {
 			[e.target.name]: e.target.value,
 		}))
 
-    const onSubmit = (e) => {
-        e.preventDefault()
+	const onSubmit = (e) => {
+		e.preventDefault()
 
-        if (password !== passwordConfirm) {
-            toast.error('Passwords do not match')
-        } 
-    }
+		if (password !== passwordConfirm) {
+			toast.error('Passwords do not match')
+		}
+	}
 
 	return (
 		<>
@@ -44,7 +44,7 @@ function Register() {
 							id='name'
 							name='name'
 							value={name}
-                            required
+							required
 							placeholder='Enter your name'
 							onChange={onChange}
 						/>
@@ -56,7 +56,7 @@ function Register() {
 							id='email'
 							name='email'
 							value={email}
-                            required
+							required
 							placeholder='Enter your email'
 							onChange={onChange}
 						/>
@@ -68,7 +68,7 @@ function Register() {
 							id='password'
 							name='password'
 							value={password}
-                            required
+							required
 							placeholder='Enter a password'
 							onChange={onChange}
 						/>
@@ -80,7 +80,7 @@ function Register() {
 							id='passwordConfirm'
 							name='passwordConfirm'
 							value={passwordConfirm}
-                            required
+							required
 							placeholder='Confirm password'
 							onChange={onChange}
 						/>
