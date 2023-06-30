@@ -19,6 +19,9 @@ app.get('/', (req, res) => {
 
 // Routes
 app.use('/api/users', require('./routes/userRoutes'))
+app.use('/api/tickets', require('./routes/ticketsRoutes'))
+
+
 app.use(errorHandler)
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`))
