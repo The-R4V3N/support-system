@@ -28,7 +28,7 @@ function NewTicket() {
           <label htmlFor='email'>Customer Email</label>
           <input type='text' className='form-control' value={email} disabled />
         </div>
-        <form onsubmit={onSubmit}>
+        <form onSubmit={onSubmit}>
           <div className='form-group'>
             <label htmlFor='product'>Product</label>
             <select
@@ -56,8 +56,10 @@ function NewTicket() {
               onChange={(e) => setDescription(e.target.value)}
             ></textarea>
           </div>
-          <div className="form-group">
-            <button type="submit" className="btn btn-block">Create Ticket</button>
+          <div className='form-group'>
+            <button type='submit' className='btn btn-block'>
+              Create Ticket
+            </button>
           </div>
         </form>
       </section>
