@@ -21,7 +21,6 @@ function NewTicket() {
   const navigate = useNavigate()
 
   useEffect(() => {
-    return () => {
       if (isError) {
         toast.error(message)
       }
@@ -30,7 +29,6 @@ function NewTicket() {
         dispatch(reset())
         navigate("/tickets")
       }
-    }
   }, [isError, isSuccess, message, dispatch, navigate])
 
   const onSubmit = (e) => {
