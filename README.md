@@ -26,7 +26,7 @@
 
   ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
-This repository contains a MERN Full Stack Support System made in React and Redux and its hosted on Vercel
+This repository contains a MERN Full Stack Support System made in React and Redux.
   
 ## Table of Contents
 
