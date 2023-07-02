@@ -19,10 +19,6 @@ const userSchema = mongoose.Schema(
 			type: String,
 			required: [true, 'Please enter your password'],
 			minLength: [6, 'Password must be at least 6 characters'],
-			match: [
-				/^(?=.*[!@#$%^&*])/,
-				'Password must contain at least one special character (!@#$%^&*)',
-			],
 		},
 		isAdmin: {
 			type: Boolean,

@@ -1,9 +1,9 @@
-const asyncHandler = require("express-async-handler")
-const mongoose = require("mongoose") // For ObjectId.isValid() workaround
+const asyncHandler = require('express-async-handler')
+const mongoose = require('mongoose')
 
-const User = require("../models/userModel")
-const Note = require("../models/noteModel")
-const Ticket = require("../models/ticketModel")
+const User = require('../models/userModel')
+const Note = require('../models/noteModel')
+const Ticket = require('../models/ticketModel')
 
 // @desc   Get notes for a ticket
 // @route  GET /api/tickets/:ticketId/notes
@@ -14,26 +14,20 @@ const getNotes = asyncHandler(async (req, res) => {
 
   if (!user) {
     res.status(401)
-    throw new Error("User not found")
+    throw new Error('User not found')
   }
 
   const ticket = await Ticket.findById(req.params.ticketId)
 
-  // Workaround for the commendted out code below
   if (!mongoose.Types.ObjectId.isValid(req.user._id)) {
     res.status(401)
-    throw new Error("Invalid user ID")
+    throw new Error('Invalid user ID')
   }
 
   if (!ticket.user.equals(req.user._id)) {
     res.status(401)
-    throw new Error("Not authorized to view this ticket")
+    throw new Error('Not authorized to view this ticket')
   }
-
-  //   if (ticket.user.toString() !== req.user._id) {
-  //     res.status(401)
-  //     throw new Error("Not authorized to view this ticket")
-  //   }
 
   const notes = await Note.find({ ticket: req.params.ticketId })
 
@@ -46,21 +40,15 @@ const getNotes = asyncHandler(async (req, res) => {
 const addNote = asyncHandler(async (req, res) => {
   const ticket = await Ticket.findById(req.params.ticketId)
 
-  // Workaround for the commendted out code below
   if (!mongoose.Types.ObjectId.isValid(req.user._id)) {
     res.status(401)
-    throw new Error("Invalid user ID")
+    throw new Error('Invalid user ID')
   }
 
   if (!ticket.user.equals(req.user._id)) {
     res.status(401)
-    throw new Error("Not authorized to view this ticket")
+    throw new Error('Not authorized to view this ticket')
   }
-
-  //   if (ticket.user.toString() !== req.user.id) {
-  //     res.status(401)
-  //     throw new Error("User not authorized")
-  //   }
 
   const note = await Note.create({
     text: req.body.text,

@@ -1,4 +1,4 @@
-const mongoose = require("mongoose")
+const mongoose = require('mongoose')
 
 const ticketSchema = mongoose.Schema(
   {
@@ -6,25 +6,25 @@ const ticketSchema = mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       required: true,
       trim: true,
-      ref: "User",
+      ref: 'User',
     },
     product: {
       type: String,
-      required: [true, "Please select a product"],
-      enum: ["iPhone", "MacBook Pro", "IMac", "AirPods", "Apple Watch", "iPad"],
+      required: [true, 'Please select a product'],
+      enum: ['iPhone', 'MacBook Pro', 'IMac', 'AirPods', 'Apple Watch', 'iPad'],
     },
     description: {
       type: String,
-      required: [true, "Please enter a description of the issue"],
+      required: [true, 'Please enter a description of the issue'],
       trim: true,
-      maxLength: [2000, "Description cannot exceed 2000 characters"],
+      maxLength: [2000, 'Description cannot exceed 2000 characters'],
     },
     status: {
       type: String,
-      enum: ["Open", "In Progress", "Closed"],
+      enum: ['Open', 'In Progress', 'Closed'],
     },
   },
   { timestamps: true }
 )
 
-module.exports = mongoose.model("Ticket", ticketSchema)
+module.exports = mongoose.model('Ticket', ticketSchema)
