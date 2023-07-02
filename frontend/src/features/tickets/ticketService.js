@@ -1,6 +1,6 @@
-import axios from "axios"
+import axios from 'axios'
 
-const API_URL = "/api/tickets/"
+const API_URL = '/api/tickets/'
 
 // Create new Ticket
 const createTicket = async (ticketData, token) => {
@@ -51,7 +51,7 @@ const closeTicket = async (ticketId, token) => {
 
   const response = await axios.put(
     API_URL + ticketId,
-    { status: "closed" },
+    { status: 'closed' },
     config
   )
 

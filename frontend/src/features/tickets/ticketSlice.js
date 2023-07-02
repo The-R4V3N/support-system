@@ -1,5 +1,5 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit"
-import ticketService from "./ticketService"
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
+import ticketService from './ticketService'
 
 const initialState = {
   tickets: [],
@@ -7,12 +7,12 @@ const initialState = {
   isError: false,
   isSuccess: false,
   isLoading: false,
-  message: "",
+  message: '',
 }
 
 // Create new Ticket
 export const createTicket = createAsyncThunk(
-  "/tickets/create",
+  '/tickets/create',
   async (ticketData, thunkAPI) => {
     try {
       const token = thunkAPI.getState().auth.user.token
@@ -32,7 +32,7 @@ export const createTicket = createAsyncThunk(
 
 // Get user Tickets
 export const getTickets = createAsyncThunk(
-  "/tickets/getAll",
+  '/tickets/getAll',
   async (_, thunkAPI) => {
     try {
       const token = thunkAPI.getState().auth.user.token
@@ -52,7 +52,7 @@ export const getTickets = createAsyncThunk(
 
 // Get user Ticket
 export const getTicket = createAsyncThunk(
-  "/tickets/get",
+  '/tickets/get',
   async (ticketId, thunkAPI) => {
     try {
       const token = thunkAPI.getState().auth.user.token
@@ -72,7 +72,7 @@ export const getTicket = createAsyncThunk(
 
 // Close Ticket
 export const closeTicket = createAsyncThunk(
-  "/tickets/close",
+  '/tickets/close',
   async (ticketId, thunkAPI) => {
     try {
       const token = thunkAPI.getState().auth.user.token
@@ -91,7 +91,7 @@ export const closeTicket = createAsyncThunk(
 )
 
 export const ticketSlice = createSlice({
-  name: "ticket",
+  name: 'ticket',
   initialState,
   reducers: {
     reset: (state) => initialState,
@@ -139,7 +139,7 @@ export const ticketSlice = createSlice({
       .addCase(closeTicket.fulfilled, (state, action) => {
         state.isLoading = false
         state.tickets.map((ticket) =>
-          ticket.id === action.payload.id ? (ticket.status = "closed") : ticket
+          ticket.id === action.payload.id ? (ticket.status = 'closed') : ticket
         )
       })
   },

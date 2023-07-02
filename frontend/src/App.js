@@ -11,7 +11,7 @@ import Tickets from './pages/Tickets'
 import Ticket from './pages/Ticket'
 
 function App() {
-	return (
+  return (
     <>
       <Router>
         <div className='container'>

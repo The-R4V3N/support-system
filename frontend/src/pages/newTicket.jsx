@@ -1,10 +1,10 @@
-import { useState, useEffect } from "react"
-import { useSelector, useDispatch } from "react-redux"
-import { useNavigate } from "react-router-dom"
-import { toast } from "react-toastify"
-import { createTicket, reset } from "../features/tickets/ticketSlice"
-import Spinner from "../components/Spinner"
-import BackButton  from "../components/BackButton"
+import { useState, useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
+import { createTicket, reset } from '../features/tickets/ticketSlice'
+import Spinner from '../components/Spinner'
+import BackButton from '../components/BackButton'
 
 function NewTicket() {
   const { user } = useSelector((state) => state.auth)
@@ -14,28 +14,28 @@ function NewTicket() {
 
   const [name] = useState(user.name)
   const [email] = useState(user.email)
-  const [product, setProduct] = useState("")
-  const [description, setDescription] = useState("")
+  const [product, setProduct] = useState('')
+  const [description, setDescription] = useState('')
 
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
   useEffect(() => {
-      if (isError) {
-        toast.error(message)
-      }
+    if (isError) {
+      toast.error(message)
+    }
 
-      if (isSuccess) {
-        dispatch(reset())
-        navigate("/tickets")
-      }
+    if (isSuccess) {
+      dispatch(reset())
+      navigate('/tickets')
+    }
   }, [isError, isSuccess, message, dispatch, navigate])
 
   const onSubmit = (e) => {
     e.preventDefault()
     dispatch(createTicket({ product, description }))
-    navigate("/tickets")
-    toast.success("Ticket created successfully")
+    navigate('/tickets')
+    toast.success('Ticket created successfully')
   }
 
   if (isLoading) {
