@@ -26,7 +26,7 @@
 
   ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
-This repository contains a MERN Full Stack Support System made in React and Redux.
+This repository contains a MERN Full Stack Support System made in React, Redux and MongoDB.
   
 ## Table of Contents
 
@@ -51,7 +51,9 @@ The Support System offers a range of professional features for users, including:
 - Clone this repository to your local machine.
 - Set up your development environment and ensure you have the necessary dependencies installed.
 - Install Node.js from the [official Website](https://nodejs.org) if you dont have it already
-- You will need a geocoding api key for this to work which you can obtain from google cloud
+- Create a account or login to your mongoDB account
+- Place your MongoDB uri into the .env.example. make a jwt secrect inside there to. It can be anything you want.
+- Finally rename .env.example to .env
   
 ### In the project  directory run
 
