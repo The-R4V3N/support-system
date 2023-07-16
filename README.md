@@ -22,7 +22,7 @@
   
 ## Welcome! Glad to see you here  
 
-## mern-full-stack-support-system
+## support-system
 
   ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
