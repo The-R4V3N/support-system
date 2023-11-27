@@ -25,6 +25,7 @@
 ## support-system
 
   ![License](https://img.shields.io/badge/license-MIT-blue.svg)
+  ![Lines of code](https://tokei.rs/b1/github/The-R4V3N/support-system)
 
 This repository contains a MERN Full Stack Support System made in React, Redux and MongoDB.
   
